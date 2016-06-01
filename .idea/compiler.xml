@@ -19,6 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="buildSrc_main" target="1.8" />
+      <module name="buildSrc_test" target="1.8" />
       <module name="symbolgradle_main" target="1.5" />
       <module name="symbolgradle_test" target="1.5" />
     </bytecodeTargetLevel>

@@ -50,7 +50,7 @@ public abstract class BasePlugin {
                     zipAlignTask = project.tasks.create(name: "zipAlignPlatform${variant.buildType.name.capitalize()}Signed", type: ZipAlignApk)
                     zipAlignTask.inputFile = signingTask.getOutputFile()
                     zipAlignTask.zipAlignExe = new File(getZipAlign())
-                    zipAlignTask.outputFile = new File("${output.outputFile.parent}${File.separator}${getFinalApkName()}")
+                    zipAlignTask.outputFile = new File("${output.outputFile.parent}${File.separator}PLATFORMSIGNEDAPK${File.separator}${getFinalApkName()}")
                     zipAlignTask.mustRunAfter(validateTask)
 
                     assembleWithPlatformKeyTask.dependsOn (envcheck,assemble,signingTask,validateTask,zipAlignTask)
